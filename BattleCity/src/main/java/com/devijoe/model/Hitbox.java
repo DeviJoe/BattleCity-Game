@@ -2,13 +2,14 @@ package com.devijoe.model;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.Setter;
 
 /**
  * Позиционная система прямоугольных объектов на плоскости
  * @author Хакимов Лев
  */
 @EqualsAndHashCode
-public class Position {
+public class Hitbox {
 
     /** Идет перечисление точек - вершин прямоугольника */
     @Getter
@@ -21,14 +22,14 @@ public class Position {
     private Point DownRight;
 
     /** Ширина модели */
-    @Getter
+    @Getter @Setter
     private double width;
 
     /** Высота модели */
-    @Getter
+    @Getter @Setter
     private double height;
 
-    public Position(final double x, final double y, final double width, final double height) {
+    public Hitbox(final double x, final double y, final double width, final double height) {
         this.width = width;
         this.height = height;
         UpLeft = new Point(x, y);

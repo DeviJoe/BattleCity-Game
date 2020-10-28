@@ -30,8 +30,8 @@ public abstract class Entity {
         for (Enum anEnum : texture.keySet()) {
             key = anEnum;
         }
-
         if (key == null) throw new Exception("В объект типа Entity передана мустая Map для текстур");
+
         BufferedImage img = texture.get(key);
         this.hitbox = new Hitbox(x, y, img.getWidth(), img.getHeight());
     }

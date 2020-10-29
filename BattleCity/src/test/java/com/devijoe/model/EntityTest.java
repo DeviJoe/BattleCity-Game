@@ -1,6 +1,7 @@
 package com.devijoe.model;
 
 import com.devijoe.model.model_direction.CompassDirection;
+import com.devijoe.service.BufferedImageComparator;
 import lombok.SneakyThrows;
 import org.junit.Assert;
 import org.junit.Before;
@@ -13,10 +14,14 @@ import java.util.Map;
 
 import static org.junit.Assert.*;
 
+/**
+ * @author Хакимов Лев
+ */
 public class EntityTest {
 
     EntityImpl entity;
 
+    @SneakyThrows
     @Before
     public void initial() {
         Map<CompassDirection, BufferedImage> texture = new HashMap<>();
@@ -39,8 +44,10 @@ public class EntityTest {
 
         if (key == null) throw new Exception("В объект типа Entity передана мустая Map для текстур");
         BufferedImage actual = entity.getTexture().get(key);
-        String actualOut = actual.toString().substring(24);
-        String expectedOut = expected.toString().substring(24);
-        Assert.assertEquals(expectedOut, actualOut);
+
+        if (!BufferedImageComparator.compareImages(actual, expected)) {
+            fail();
+        }
+
     }
 }

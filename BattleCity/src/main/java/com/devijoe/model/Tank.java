@@ -11,28 +11,28 @@ import java.util.Map;
 
 /**
  * Класс - модель, декларирующий поля танка
- * @author Хакимов Лев 
+ * @author Хакимов Лев
  */
 @EqualsAndHashCode(callSuper = false)
 public class Tank extends Entity {
 
     /** Количество очков здоровья */
     @Getter @Setter
-    int hp;
+    private int hp;
 
     /** Скорость */
     @Getter @Setter
-    int speed;
+    private int speed;
 
     /** Система управления танком */
     @Getter
-    final Control control;
+    private final Control control;
 
     /** Чекбокс на то, подконтролен ли танк игроку */
     @Getter @Setter
-    boolean isPlayer;
+    private boolean isPlayer;
 
-    public Tank(double x, double y, Map<? extends CompassDirection, BufferedImage> texture, int hp, int speed, Control control) {
+    public Tank(double x, double y, Map<? extends CompassDirection, BufferedImage> texture, int hp, int speed, Control control) throws Exception {
         super(x, y, texture);
         this.hp = hp;
         this.speed = speed;
@@ -40,7 +40,7 @@ public class Tank extends Entity {
         this.isPlayer = false;
     }
 
-    public Tank(double x, double y, Map<? extends CompassDirection, BufferedImage> texture, int hp, int speed, Control control, boolean isPlayer) {
+    public Tank(double x, double y, Map<? extends CompassDirection, BufferedImage> texture, int hp, int speed, Control control, boolean isPlayer) throws Exception {
         this(x, y, texture, hp, speed, control);
         this.isPlayer = isPlayer;
     }

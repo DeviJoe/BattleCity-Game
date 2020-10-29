@@ -3,7 +3,9 @@ package com.devijoe.model;
 import org.junit.Assert;
 import org.junit.Test;
 
-
+/**
+ * @author Хакимов Лев
+ */
 public class HitboxTest {
 
     @Test

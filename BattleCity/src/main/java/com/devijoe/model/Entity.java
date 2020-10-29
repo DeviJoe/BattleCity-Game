@@ -22,8 +22,8 @@ public abstract class Entity {
     @Getter
     private final Map<? extends Enum, BufferedImage> texture;
 
-    @SneakyThrows
-    public Entity(double x, double y, Map<? extends Enum, BufferedImage> texture)  {
+
+    public Entity(double x, double y, Map<? extends Enum, BufferedImage> texture) throws Exception {
         this.texture = texture;
 
         Enum key = null;

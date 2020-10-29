@@ -10,12 +10,12 @@ public enum CompassDirection {
 
     /** Север */
     NORTH(0),
-    /** Восток */
-    WEST(90),
+    /** Запад */
+    EAST(270),
     /** Юг */
     SOUTH(180),
-    /** Запад */
-    EAST(270);
+    /** Восток */
+    WEST(90);
 
     /** Угол поворота */
     @Getter
